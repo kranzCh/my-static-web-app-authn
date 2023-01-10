@@ -1,8 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { UserInfo } from '../model/user-info';
+
 @Component({
   selector: 'app-nav',
   template: `
+    <nav class="menu">
+      <p class="menu-label">Menu</p>
+      <ul class="menu-list">
+        <a routerLink="/products" routerLinkActive="router-link-active">
+          <span>Products</span>
+        </a>
+        <a routerLink="/about" routerLinkActive="router-link-active">
+          <span>About</span>
+        </a>
+      </ul>
+    </nav>
     <nav class="menu auth">
       <p class="menu-label">Auth</p>
       <div class="menu-list auth">
@@ -30,7 +42,7 @@ import { UserInfo } from '../model/user-info';
     </div>
   `,
 })
-export class implements OnInit {
+export class NavComponent implements OnInit {
   providers = ['twitter', 'github', 'aad'];
   redirect = window.location.pathname;
   userInfo: UserInfo;
